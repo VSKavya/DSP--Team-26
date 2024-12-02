@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Basic body styling */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+
+        /* Center the form content */
+        .form-container {
+            text-align: center;
+        }
+
+        /* Styling for the login link */
+        .login-link {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; color: black;">Sign_Up_Form</h2>
+
+    <div class="form-container">
+        <form method="post" action="{{ url_for('main.signup') }}">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="group">User Group (H or R):</label>
+            <input type="text" id="group" name="group" required><br><br>
+            <button type="submit">Signup</button>
+        </form>
+        <!-- Display the login link below the Signup button -->
+        <p>Already registered? <a href="{{ url_for('main.login') }}" class="login-link">Login_page</a>.</p>
+    </div>
+</body>
+</html>

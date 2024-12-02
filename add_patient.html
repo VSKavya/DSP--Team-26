@@ -1,0 +1,99 @@
+]<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Patient</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Add New Patient</h1>
+
+    <form method="post" action="{{ url_for('main.add_patient') }}">
+        <!-- Add form fields for new patient details -->
+        <div>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" required>
+        </div>
+
+        <div>
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" required>
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input type="text" name="age" required>
+        </div>
+
+        <div>
+            <label for="gender">Gender:</label>
+            <input type="text" name="gender" required>
+        </div>
+
+        <div>
+            <label for="weight">Weight:</label>
+            <input type="text" name="weight" required>
+        </div>
+
+        <div>
+            <label for="height">Height:</label>
+            <input type="text" name="height" required>
+        </div>
+
+        <div>
+            <label for="health_history">Health History:</label>
+            <input type="text" name="health_history" required>
+        </div>
+
+        <button type="submit">Add Patient</button>
+    </form>
+
+    <a href="{{ url_for('main.dashboard') }}">Back to Dashboard</a>
+
+</body>
+</html>
